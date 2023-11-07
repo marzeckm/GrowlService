@@ -1,0 +1,179 @@
+/**
+ * Minimal growl-service for showing notifications on websites
+ * 
+ * @author Maximilian Marzeck - 2023
+ * @link https://www.marzeck.de/
+ *
+ * @class {GrowlService}
+ */
+@media screen{
+    /**
+    * animation for showing the growl message and fade it out
+    * @type {animation}
+    * @elements [class=grolservice-message]
+    */
+    @keyframes growlserviceMessageEinblenden{
+        0% {
+            opacity: 0;
+            transform:scale(0.7);
+        }
+        5%{
+            opacity: 1;
+            transform: scale(1);
+        }
+        95%{
+            opacity: 1;
+            transform: scale(1);
+        }
+        99%{
+            opacity: 0;
+            transform:scale(0.7);
+        }
+        100%{
+            opacity: 0;
+            display: none;
+        }
+    }
+
+    /**
+    * Contains all the GrowlServiceMessages
+    *
+    * @type {GrowlServiceMessage[]} GrowlServiceContainer
+    */
+    .growlservice-container{    
+        position: fixed;
+        z-index: 99;
+        bottom: 1rem;
+        right: 1rem;
+
+        display: flex;
+        flex-direction: column-reverse;
+        width: 22rem;
+        max-width: 80%;
+
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /**
+    * Displays an GrowlServiceMessage
+    *
+    * @type {GrowlServiceMessage}
+    */
+    .growlservice-message{
+        position: relative;
+        margin: 0.5rem 0 0 0;
+        padding: 0.75rem;
+        
+        border: 1px solid rgb(40,40,40);    
+        border-radius: 0.25rem;
+
+        color: rgb(40,40,40);
+        background-color: rgb(150,150,150);
+
+        animation: growlserviceMessageEinblenden 4s forwards;
+    }
+
+    /**
+    * Header of a GrowlServiceMessage 
+    *
+    * @type {STRONG}
+    */
+    .growlservice-message strong{
+        max-width: calc(100% - 1.5rem);
+    }
+
+    /**
+    * Text of a GrowlServiceMessage
+    *
+    * @type {DIV}
+    */
+    .growlservice-message div{
+        margin: 0.5rem 0 0 0;
+    }
+
+    /**
+    * CloseButton of a GrowlServiceMessage
+    *
+    * @type {CloseButton}
+    */
+    .growlservice-message a{
+        position: absolute;
+        right: 0.5rem;
+        top: 0.5rem;
+
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 1.25rem;
+        height: 1.25rem;
+
+        border-radius: 50%;
+        background-color: rgba(250,250,250,0.1);
+
+        cursor: pointer;
+
+        transition: 0.5s background-color;
+    }
+
+    /**
+    * Contains the "X" to close a GrowlServiceMessage
+    *
+    * @type {AbstractPseudo<Before, CloseButton>}
+    */
+    .growlservice-message a::before{
+        content: "\2715";
+    }
+
+    /**
+    * Background gets slightly brighter when hover on CloseButton 
+    *
+    * @type {Event<Hover, CloseButton>}
+    */
+    .growlservice-message a:hover{
+        background-color: rgba(250,250,250,0.3);
+    }
+
+    /**
+    * Typing the GrowlServiceMessage to an info
+    *
+    * @type {GrowlServiceMessage<info>}
+    */
+    .growlservice-message.info{
+        background-color: #b3dbf4;
+        color: #316485;
+        border-color: #b3dbf4;
+    }
+
+    /** 
+    * Typing the GrowlServiceMessage to success
+    *
+    * @type {GrowlServiceMessage<success>}
+    */
+    .growlservice-message.success{
+        background-color: #bbf5bb;
+        color: #2c6c22;
+        border-color: #4db83d;
+    }
+
+    /**
+    * Typing the GrowlServiceMessage to a warning
+    *
+    * @type {GrowlServiceMessage<warning>}
+    */
+    .growlservice-message.warning{
+        background-color: #ffeaa7;
+        color: #8e7d2d;
+        border-color: #b6a142;
+    }
+
+    /**
+    * Typing the GrowlServiceMessage to an error
+    *
+    * @type {GrowlServiceMessage<error>}
+    */
+    .growlservice-message.error{
+        background-color: #fc9591;
+        color: #5f2624;
+        border-color: #bb504d;
+    }
+}
