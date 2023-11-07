@@ -156,15 +156,16 @@ const GrowlService = function(){
          * @param {string} type 
          * @param {string} innerText 
          * @param {string[]} classList 
-         * @param {function | null} onClick 
+         * @param {function | undefined} onClick 
          * @returns {HtmlNode}
          */
-        _createAbstractElement: function(type, innerText, classList, onClick=null){
+        _createAbstractElement: function(type, innerText, classList, onClick){
             const abstractElement = document.createElement(type);
             abstractElement.innerText = innerText;
 
-            for(const className of classList)
+            classList.forEach(function(className){
                 abstractElement.classList.add(className);
+            });
 
             if(onClick)
                 abstractElement.onclick = onClick;
