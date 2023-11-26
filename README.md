@@ -17,10 +17,12 @@ Welcome to GrowlService, a compact and efficient notification service designed f
 ## Getting Started:
 To integrate GrowlService into your project, simply include the provided JavaScript and CSS files. The intuitive usage allows you to trigger notifications with ease, enhancing user engagement without the need for complex configurations.
 
-Adding GrowlService to your web project is a straightforward process. Simply include the following lines in the <head> section of your HTML file to link the GrowlService stylesheet and script:
+Adding GrowlService to your web project is a straightforward process. Simply include the following lines in the <head> section of your HTML file to link the GrowlService stylesheet and script (from the folder `bin`):
 
-`<link rel="stylesheet" href="url/to/GrowlService.min.css">
-<script src="url/to/GrowlService.min.js"></script>`
+```
+<link rel="stylesheet" href="url/to/GrowlService.min.css"/>
+<script src="url/to/GrowlService.min.js"></script>
+```
 
 These two lines ensure that your project is equipped with the necessary styles and scripts to leverage the capabilities of GrowlService. Once integrated, you can start incorporating lightweight and visually appealing notifications effortlessly, enhancing the overall user experience on your website. Feel free to explore the flexible API and customization options to tailor the notification system to suit your project's unique requirements. With GrowlService, elevating your web application's interactivity has never been simpler. Make sure to include the code after the document body has been initialized and call the growlservice only after execution of the growlservice initialization.
 
