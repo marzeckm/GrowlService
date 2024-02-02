@@ -17,7 +17,7 @@ Welcome to GrowlService, a compact and efficient notification service designed f
 ## Getting Started:
 To integrate GrowlService into your project, simply include the provided JavaScript and CSS files. The intuitive usage allows you to trigger notifications with ease, enhancing user engagement without the need for complex configurations.
 
-Adding GrowlService to your web project is a straightforward process. Simply include the following lines in the <head> section of your HTML file to link the GrowlService stylesheet and script (from the folder `bin`):
+Adding GrowlService to your web project is a straightforward process. Simply include the following lines in the `<head>` section of your HTML file to link the GrowlService stylesheet and script (from the folder `bin`):
 
 ```
 <link rel="stylesheet" href="url/to/GrowlService.min.css"/>
@@ -31,16 +31,24 @@ These two lines ensure that your project is equipped with the necessary styles a
 Integrating GrowlService into your web project unlocks a seamless way to deliver notifications. Use the following syntax to display notifications of different types:
 
 - Info Notification:  
-`GrowlService().info("Title", "Text of the info notification");`
+```
+GrowlService().info("Title", "Text of the info notification");
+```
 
 - Success Notification:  
-`GrowlService().success("Title", "Text of the success notification");`
+```
+GrowlService().success("Title", "Text of the success notification");
+```
 
 - Warning Notification:  
-`GrowlService().warning("Title", "Text of the warning notification");`
+```
+GrowlService().warning("Title", "Text of the warning notification");
+```
 
 - Error Notification:  
-`GrowlService().error("Title", "Text of the error notification");`
+```
+GrowlService().error("Title", "Text of the error notification");
+```
 
 Simply choose the appropriate method based on the nature of your notification, and GrowlService will handle the rest. Customize titles and notification text to suit your application's needs, providing users with clear and visually appealing feedback. Explore the full potential of GrowlService to enhance the interactivity of your web application effortlessly.
 
